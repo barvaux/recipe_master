@@ -1,0 +1,10 @@
+# ROUTE LISTE DES DISHES
+# PATTERN: /dishes
+# TARGET: ?dishes=index
+RewriteRule ^dishes$ index.php?dishes=index [L]
+
+
+
+# --------------------------------------------------
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteRule ^(.*)$ index.php [L]
