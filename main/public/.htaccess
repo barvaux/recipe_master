@@ -1,10 +1,16 @@
-# ROUTE LISTE DES DISHES
-# PATTERN: /dishes
-# TARGET: ?dishes=index
-RewriteRule ^dishes$ index.php?dishes=index [L]
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+# ROUTE LISTE DES RECETTES
+# PATTERN: /recipes
+# TARGET: ?recipes=index
+RewriteRule ^recipes$ index.php?recipes=index [L]
+
+
 
 
 
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
+

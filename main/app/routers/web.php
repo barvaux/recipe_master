@@ -12,10 +12,14 @@ if (isset($_GET['users'])) :
 elseif (isset($_GET['dishes'])) :
     include_once '../app/routers/dishes.php';
 
-// // AUTHORS.: ROUTER DES AUTHORS
-// // PATTERN: ?authors=xxx
-// elseif (isset($_GET['authors'])) :
-//     include_once '../app/routers/authors.php';
+
+// ROUTE DES RECETTES
+// PATTERN: ?recipes=xxx
+elseif (isset($_GET['recipes'])) :
+    include_once '../app/controllers/recipesController.php';
+    \App\Controllers\RecipesController\latestRecipesAction($connexion);
+
+
 
 // PATTERN: /
 else:
