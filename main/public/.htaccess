@@ -6,7 +6,10 @@ RewriteEngine on
 # TARGET: ?recipes=index
 RewriteRule ^recipes$ index.php?recipes=index [L]
 
-
+# ROUTE LISTE DES CHEFS
+# PATTERN: /chefs
+# TARGET: ?chefs=index
+RewriteRule ^chefs$ index.php?chefs=index [L]
 
 
 

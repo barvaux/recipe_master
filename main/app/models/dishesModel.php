@@ -10,7 +10,7 @@ function findRandomDish(\PDO $connexion): ?array
                 d.description AS dish_description,
                 d.picture AS dish_picture,
                 d.created_at,
-                AVG(r.value) AS average_rating,
+                ROUND(AVG(r.value), 1) AS average_rating,
                 u.name AS user_name,
                 COUNT(c.id) AS comment_count
             FROM

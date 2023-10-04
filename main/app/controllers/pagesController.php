@@ -15,7 +15,8 @@ function homeAction(\PDO $connexion)
     $userMostPopular = \App\Models\usersModel\findMostPopularUser($connexion);
     $userMostPopularRecipes = \App\Models\dishesModel\findUserMostPopularRecipes($connexion);
     $mostPopularUserPicture = \App\Models\usersModel\findMostPopularUserPicture($connexion);
-  
+    
+
 
     global $title, $content;
     $title = "Popular Dishes";

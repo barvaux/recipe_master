@@ -10,4 +10,4 @@ switch ($_GET['dishes']):
         include_once '../app/controllers/dishesController.php';
         \App\Controllers\DishesController\indexAction($connexion);
         break;
-endswdishes;
+endswitch;

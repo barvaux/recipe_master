@@ -10,4 +10,4 @@ switch ($_GET['recipes']):
         include_once '../app/controllers/recipesController.php';
         \App\Controllers\RecipesController\indexAction($connexion);
         break;
-endswdishes;
+endswitch;

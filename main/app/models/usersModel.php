@@ -39,3 +39,4 @@ function findMostPopularUserPicture(\PDO $connexion): ?string
         return null;
     }
 }
+
