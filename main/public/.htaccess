@@ -11,25 +11,60 @@ RewriteRule ^recipes$ index.php?recipes=index [L]
 # TARGET: ?chefs=index
 RewriteRule ^chefs$ index.php?chefs=index [L]
 
-# ROUTE LISTE DES ENTREES
-# PATTERN: /entrees
-# TARGET: ?entrees=show
-RewriteRule ^entrees$ index.php?entrees=show [L]
 
-# ROUTE LISTE DES PLATS PRINCIPAUX
-# PATTERN: /platsPrincipaux
-# TARGET: ?platsPrincipaux=show
-RewriteRule ^platsPrincipaux$ index.php?platsPrincipaux=show [L]
 
-# ROUTE LISTE DES PLATS VEGETARIEN
-# PATTERN: /vegetarien
-# TARGET: ?vegetarien=show
-RewriteRule ^vegetarien$ index.php?vegetarien=show [L]
+# ROUTE LISTE DES PLAT FRANCAIS
+# PATTERN: /francaise
+# TARGET: ?francaise=show
+RewriteRule ^francaise$ index.php?francaise=show [L]
 
-# ROUTE LISTE DES PLATS VEGAN
-# PATTERN: /vegan
-# TARGET: ?vegan=show
-RewriteRule ^vegan$ index.php?vegan=show [L]
+# ROUTE LISTE DES PLAT ITALIEN
+# PATTERN: /italienne
+# TARGET: ?italienne=show
+RewriteRule ^italienne$ index.php?italienne=show [L]
+
+# ROUTE LISTE DES PLAT JAPONAIS
+# PATTERN: /japonaise
+# TARGET: ?japonaise=show
+RewriteRule ^japonaise$ index.php?japonaise=show [L]
+
+# ROUTE LISTE DES PLAT MEXICAIN
+# PATTERN: /mexicaine
+# TARGET: ?mexicaine=show
+RewriteRule ^mexicaine$ index.php?mexicaine=show [L]
+
+# ROUTE LISTE DES PLAT INDIEN
+# PATTERN: /indienne
+# TARGET: ?indienne=show
+RewriteRule ^indienne$ index.php?indienne=show [L]
+
+# ROUTE LISTE DES PLAT CHINOIS
+# PATTERN: /chinoise
+# TARGET: ?chinoise=show
+RewriteRule ^chinoise$ index.php?chinoise=show [L]
+
+# ROUTE LISTE DES PLAT MEDITERRANEEN
+# PATTERN: /mediterraneenne
+# TARGET: ?mediterraneenne=show
+RewriteRule ^mediterraneenne$ index.php?mediterraneenne=show [L]
+
+# ROUTE LISTE DES PLAT AFRICAIN
+# PATTERN: /africaine
+# TARGET: ?africaine=show
+RewriteRule ^africaine$ index.php?africaine=show [L]
+
+# ROUTE LISTE DES PLAT AMERICAIN
+# PATTERN: /americaine
+# TARGET: ?americaine=show
+RewriteRule ^americaine$ index.php?americaine=show [L]
+
+# ROUTE LISTE DES PLAT THAILANDAIS
+# PATTERN: /thailandaise
+# TARGET: ?thailandaise=show
+RewriteRule ^thailandaise$ index.php?thailandaise=show [L]
+
+
+
 
 # ROUTE LISTE DES PLATS AU POULET
 # PATTERN: /poulet

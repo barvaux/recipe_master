@@ -3,23 +3,43 @@
           <h2 class="font-bold text-lg mb-4">Catégories</h2>
           <ul class="list-reset text-gray-100">
             <li>
-              <a class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?entrees">Entrées</a>
+              <a class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?francaise">Française</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?platsPrincipaux">Plats principaux</a>
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?italienne">Italienne</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?desserts">Desserts</a>
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?japonaise">Japonaise</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?vegetarien">Végétarien</a>
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?mexicaine">Mexicaine</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?vegan">Vegan</a>
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?indienne">Indienne</a>
+            </li>
+            <li>
+              <a
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?chinoise">Chinoise</a>
+            </li>
+            <li>
+              <a
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?mediterraneenne">Méditerranéenne</a>
+            </li>
+            <li>
+              <a
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?africaine">Africaine</a>
+            </li>
+            <li>
+              <a
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?americaine">Américaine</a>
+            </li>
+            <li>
+              <a
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?thailandaise">Thailandaise</a>
             </li>
           </ul>
         </div>

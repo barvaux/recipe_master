@@ -2,7 +2,7 @@
 <section>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Boucle pour afficher les recettes d'entrées -->
-        <?php foreach ($platsPrincipaux_recipes as $recipe): ?>
+        <?php foreach ($africaine_recipes as $recipe): ?>
             <article class="bg-white rounded-lg overflow-hidden shadow-lg relative">
                 <img class="w-full h-48 object-cover" src="<?php echo $recipe['dish_picture']; ?>" alt="Image de recette" />
                 <div class="p-4">

@@ -15,8 +15,6 @@ function findMostPopularUser(\PDO $connexion): ?array
     return $rs->fetch(\PDO::FETCH_ASSOC);
 }
 
-   
-   
 function findMostPopularUserPicture(\PDO $connexion): ?string
 {
     $sql = "SELECT u.picture AS user_picture
@@ -34,7 +32,7 @@ function findMostPopularUserPicture(\PDO $connexion): ?string
     $row = $rs->fetch(\PDO::FETCH_ASSOC);
 
     if ($row && isset($row['user_picture'])) {
-        return $row['user_picture']; // Les données de l'image stockée en base de données
+        return $row['user_picture']; 
     } else {
         return null;
     }

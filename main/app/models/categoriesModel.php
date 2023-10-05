@@ -1,7 +1,7 @@
 <?php
 namespace App\Models\CategoriesModel;
 
-function getEntreesRecipes(\PDO $connexion)
+function getFrancaiseRecipes(\PDO $connexion)
 {
     $sql = "SELECT
                 d.id AS dish_id,
@@ -13,8 +13,10 @@ function getEntreesRecipes(\PDO $connexion)
                 dishes d
             LEFT JOIN
                 ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
             WHERE
-                d.name LIKE '%lunch%' OR d.description LIKE '%lunch%'
+                t.name = 'Française'
             GROUP BY
                 d.id, d.name, d.description, d.picture;";
 
@@ -22,7 +24,7 @@ function getEntreesRecipes(\PDO $connexion)
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
-function getPlatsPrincipauxRecipes(\PDO $connexion)
+function getItalienneRecipes(\PDO $connexion)
 {
     $sql = "SELECT
                 d.id AS dish_id,
@@ -34,16 +36,17 @@ function getPlatsPrincipauxRecipes(\PDO $connexion)
                 dishes d
             LEFT JOIN
                 ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
             WHERE
-                (d.name LIKE '%main%' OR d.description LIKE '%main%')
-                AND (d.name NOT LIKE '%cake%' AND d.description NOT LIKE '%cake%')
+                t.name = 'Italienne'
             GROUP BY
                 d.id, d.name, d.description, d.picture;";
 
     $rs = $connexion->query($sql);
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
-function getDesserts(\PDO $connexion)
+function getJaponaise(\PDO $connexion)
 {
     $sql = "SELECT
                 d.id AS dish_id,
@@ -55,8 +58,10 @@ function getDesserts(\PDO $connexion)
                 dishes d
             LEFT JOIN
                 ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
             WHERE
-                d.name LIKE '%cake%' OR d.description LIKE '%cake%'
+                t.name = 'Japonaise'
             GROUP BY
                 d.id, d.name, d.description, d.picture;";
 
@@ -64,7 +69,7 @@ function getDesserts(\PDO $connexion)
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
-function getVegetarien(\PDO $connexion)
+function getMexicaine(\PDO $connexion)
 {
     $sql = "SELECT
                 d.id AS dish_id,
@@ -76,8 +81,10 @@ function getVegetarien(\PDO $connexion)
                 dishes d
             LEFT JOIN
                 ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
             WHERE
-                d.name LIKE '%fruit%' OR d.description LIKE '%fruit%'
+                t.name = 'Mexicaine'
             GROUP BY
                 d.id, d.name, d.description, d.picture;";
 
@@ -85,7 +92,7 @@ function getVegetarien(\PDO $connexion)
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
-function getVegan(\PDO $connexion)
+function getIndienne(\PDO $connexion)
 {
     $sql = "SELECT
                 d.id AS dish_id,
@@ -97,11 +104,130 @@ function getVegan(\PDO $connexion)
                 dishes d
             LEFT JOIN
                 ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
             WHERE
-                d.name LIKE '%vegan%' OR d.description LIKE '%vegan%'
+                t.name = 'Indienne'
             GROUP BY
                 d.id, d.name, d.description, d.picture;";
 
     $rs = $connexion->query($sql);
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+function getChinoise(\PDO $connexion)
+{
+    $sql = "SELECT
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating
+            FROM
+                dishes d
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                t.name = 'Chinoise'
+            GROUP BY
+                d.id, d.name, d.description, d.picture;";
+
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function getMediterraneenne(\PDO $connexion)
+{
+    $sql = "SELECT
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating
+            FROM
+                dishes d
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                t.name = 'Méditerranéenne'
+            GROUP BY
+                d.id, d.name, d.description, d.picture;";
+
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function getAfricaine(\PDO $connexion)
+{
+    $sql = "SELECT
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating
+            FROM
+                dishes d
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                t.name = 'Africaine'
+            GROUP BY
+                d.id, d.name, d.description, d.picture;";
+
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function getAmericaine(\PDO $connexion)
+{
+    $sql = "SELECT
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating
+            FROM
+                dishes d
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                t.name = 'Américaine'
+            GROUP BY
+                d.id, d.name, d.description, d.picture;";
+
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function getThailandaise(\PDO $connexion)
+{
+    $sql = "SELECT
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating
+            FROM
+                dishes d
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                t.name = 'Thailandaise'
+            GROUP BY
+                d.id, d.name, d.description, d.picture;";
+
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+

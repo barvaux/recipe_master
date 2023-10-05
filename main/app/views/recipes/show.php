@@ -12,7 +12,10 @@
           />
           <div class="p-4">
             <h3 class="text-xl font-semibold mb-2"><?php echo $recipe['dish_name']; ?></h3>
-            <p class="text-gray-700"><?php echo $recipe['dish_description']; ?></p>
+            <p class="text-gray-700">
+              <?php echo strlen($recipe['dish_description']) > 100 ? substr($recipe['dish_description'], 0, 100) . '...' : $recipe['dish_description']; ?>
+            </p>
+
             <div class="flex items-center mt-4">
               <span class="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
               <span><?php echo $recipe['average_rating']; ?></span>
@@ -21,6 +24,9 @@
               <span class="text-gray-700 mr-2">Par <?php echo $recipe['user_name']; ?></span>
               <span class="text-gray-500"><i class="fas fa-comment"></i> <?php echo $recipe['comment_count']; ?> commentaires</span>
             </div>
+            <a href="recipe.html" class="inline-block mt-4 bg-red-500 hover:bg-red-800 rounded-full px-4 py-2 text-white">
+                Voir la recette
+            </a>
           </div>
         </div>
       <?php endforeach; ?>
