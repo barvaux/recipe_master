@@ -11,6 +11,51 @@ RewriteRule ^recipes$ index.php?recipes=index [L]
 # TARGET: ?chefs=index
 RewriteRule ^chefs$ index.php?chefs=index [L]
 
+# ROUTE LISTE DES ENTREES
+# PATTERN: /entrees
+# TARGET: ?entrees=show
+RewriteRule ^entrees$ index.php?entrees=show [L]
+
+# ROUTE LISTE DES PLATS PRINCIPAUX
+# PATTERN: /platsPrincipaux
+# TARGET: ?platsPrincipaux=show
+RewriteRule ^platsPrincipaux$ index.php?platsPrincipaux=show [L]
+
+# ROUTE LISTE DES PLATS VEGETARIEN
+# PATTERN: /vegetarien
+# TARGET: ?vegetarien=show
+RewriteRule ^vegetarien$ index.php?vegetarien=show [L]
+
+# ROUTE LISTE DES PLATS VEGAN
+# PATTERN: /vegan
+# TARGET: ?vegan=show
+RewriteRule ^vegan$ index.php?vegan=show [L]
+
+# ROUTE LISTE DES PLATS AU POULET
+# PATTERN: /poulet
+# TARGET: ?poulet=show
+RewriteRule ^poulet$ index.php?poulet=show [L]
+
+# ROUTE LISTE DES PLATS AU BOEUF
+# PATTERN: /boeuf
+# TARGET: ?boeuf=show
+RewriteRule ^boeuf$ index.php?boeuf=show [L]
+
+# ROUTE LISTE DES PLATS AU POISSON
+# PATTERN: /poisson
+# TARGET: ?poisson=show
+RewriteRule ^poisson$ index.php?poisson=show [L]
+
+# ROUTE LISTE DES PLATS AU LEGUME
+# PATTERN: /legumes
+# TARGET: ?legumes=show
+RewriteRule ^legumes$ index.php?legumes=show [L]
+
+# ROUTE LISTE DES PLATS AU FROMAGE
+# PATTERN: /fromage
+# TARGET: ?fromage=show
+RewriteRule ^fromage$ index.php?fromage=show [L]
+
 
 
 # --------------------------------------------------

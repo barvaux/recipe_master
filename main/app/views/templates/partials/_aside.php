@@ -3,39 +3,23 @@
           <h2 class="font-bold text-lg mb-4">Catégories</h2>
           <ul class="list-reset text-gray-100">
             <li>
-              <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block"
-                href="#"
-                >Entrées</a
-              >
+              <a class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?entrees">Entrées</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block"
-                href="#"
-                >Plats principaux</a
-              >
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?platsPrincipaux">Plats principaux</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block"
-                href="#"
-                >Desserts</a
-              >
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?desserts">Desserts</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block"
-                href="#"
-                >Végétarien</a
-              >
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?vegetarien">Végétarien</a>
             </li>
             <li>
               <a
-                class="hover:text-white hover:bg-yellow-600 px-2 block"
-                href="#"
-                >Vegan</a
-              >
+                class="hover:text-white hover:bg-yellow-600 px-2 block" href="index.php?vegan">Vegan</a>
             </li>
           </ul>
         </div>
@@ -43,39 +27,19 @@
           <h2 class="font-bold text-lg mb-4">Ingrédients</h2>
           <ul class="list-reset text-gray-200">
             <li>
-              <a
-                class="hover:text-white hover:bg-yellow-700 px-2 block"
-                href="#"
-                >Poulet</a
-              >
+              <a class="hover:text-white hover:bg-yellow-700 px-2 block" href="index.php?poulet">Poulet</a>
             </li>
             <li>
-              <a
-                class="hover:text-white hover:bg-yellow-700 px-2 block"
-                href="#"
-                >Boeuf</a
-              >
+              <a class="hover:text-white hover:bg-yellow-700 px-2 block" href="index.php?boeuf">Boeuf</a>
             </li>
             <li>
-              <a
-                class="hover:text-white hover:bg-yellow-700 px-2 block"
-                href="#"
-                >Poisson</a
-              >
+              <a class="hover:text-white hover:bg-yellow-700 px-2 block" href="index.php?poisson">Poisson</a>
             </li>
             <li>
-              <a
-                class="hover:text-white hover:bg-yellow-700 px-2 block"
-                href="#"
-                >Légumes</a
-              >
+              <a class="hover:text-white hover:bg-yellow-700 px-2 block" href="index.php?legumes">Légumes</a>
             </li>
             <li>
-              <a
-                class="hover:text-white hover:bg-yellow-700 px-2 block"
-                href="#"
-                >Fromage</a
-              >
+              <a class="hover:text-white hover:bg-yellow-700 px-2 block" href="index.php?fromage">Fromage</a>
             </li>
           </ul>
         </div>
