@@ -7,9 +7,11 @@ RewriteEngine on
 RewriteRule ^users\/login\/form$ index.php?users=loginForm [L]
 
 # ROUTE DE CONNEXION
-# PATTERN: /users/login
+# PATTERN: /users/login/submit
 # TARGET: ?users=login
-RewriteRule ^users\/login$ index.php?users=login [L]
+RewriteRule ^users\/login\/submit$ index.php?users=login [L]
+
+
 
 # ROUTE LISTE DES RECETTES
 # PATTERN: /recipes

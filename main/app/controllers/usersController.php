@@ -17,7 +17,7 @@ function loginFormAction()
 function loginAction(\PDO $connexion, $data)
 {
     include_once '../app/models/usersModel.php';
-    $user = UsersModel\findOneByPseudo($connexion, $data);
+    $user = UsersModel\findOneByName($connexion, $data);
 
     if ($user && password_verify($data['password'], $user['password'])) :
         // Je sais qu'iel peut entrer

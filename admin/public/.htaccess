@@ -1,0 +1,52 @@
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+# RewriteBase "/.../"
+
+#--------------------------------------------------
+# ROUTES
+#--------------------------------------------------
+# ROUTE DE LOGOUT
+# PATTERN: /users/logout
+# TARGET: ?users=logout
+RewriteRule ^users\/logout$ index.php?users=logout [L]
+
+# ROUTE DE CATEGORIES
+# CATEGORIES.INDEX
+# PATTERN: /categories
+# TARGET: ?categories=index
+RewriteRule ^types_of_dishes$ index.php?types_of_dishes=index [L]
+
+# 
+# CATEGORIES.ADD
+# PATTERN: /categories.add
+# TARGET: ?categories=add
+RewriteRule ^types_of_dishes\/add$ index.php?types_of_dishes=add [L]
+
+# 
+# CATEGORIES.CREATE
+# PATTERN: /categories/create
+# TARGET: ?categories=create
+RewriteRule ^types_of_dishes\/create$ index.php?types_of_dishes=create [L]
+
+
+# CATEGORIES.DELETE
+# PATTERN: /categories/delete/x
+# TARGET: ?categories=delete&id=x
+RewriteRule ^types_of_dishes\/delete\/([1-9][0-9]*)$ index.php?types_of_dishes=delete&id=$1 [L] 
+
+# CATEGORIES.EDIT
+# PATTERN: /categories/editForm/x
+# TARGET: ?categories=editForm&id=x
+RewriteRule ^types_of_dishes\/editForm\/([1-9][0-9]*)$ index.php?types_of_dishes=editForm&id=$1 [L]
+
+
+# CATEGORIES.UPDATE
+# PATTERN: /categories/edit/x
+# TARGET: ?categories=edit&id=x
+RewriteRule ^types_of_dishes\/edit\/([1-9][0-9]*)$ index.php?types_of_dishes=edit&id=$1 [L]
+
+
+
+# --------------------------------------------------
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteRule ^(.*)$ index.php [L]
