@@ -33,8 +33,8 @@
                         <li><a href="#">Ajouter un tag</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">GESTION DES USERS</li>
-                        <li><a href="#">Liste des users</a></li>
-                        <li><a href="#">Ajouter un user</a></li>
+                        <li><a href="users">Liste des users</a></li>
+                        <li><a href="users/add">Ajouter un user</a></li>
                     </ul>
                 </li>
                 <li><a href="users/logout">LOGOUT</a></li>

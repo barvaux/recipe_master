@@ -10,7 +10,7 @@ include_once '../app/models/categoriesModel.php';
 function indexAction(\PDO $connexion)
 {
     // Je mets le findAll() dans $categories
-    $types_of_dishes = CategoriesModel\findAll($connexion);
+    $categories = CategoriesModel\findAll($connexion);
 
     // Je charge la vue categories.index dans $content
     global $title, $content;
@@ -34,12 +34,12 @@ function deleteAction(\PDO $connexion, int $id)
 { 
     $return = CategoriesModel\delete($connexion, $id);
 
-    header('location: ' . ADMIN_ROOT . 'types_of_dishes');
+    header('location: ' . ADMIN_ROOT . 'categories');
 }
 
 function editFormAction(\PDO $connexion, int $id)
 { 
-    $types_of_dishes = CategoriesModel\findOneById($connexion, $id);
+    $categorie = CategoriesModel\findOneById($connexion, $id);
 
     // Je charge la vue editForm dans $content
     global $title, $content;
@@ -54,12 +54,12 @@ function editAction(\PDO $connexion, array $data = null)
 { 
     $return = CategoriesModel\updateOneById($connexion, $data);
 
-    header('location: ' . ADMIN_ROOT . 'types_of_dishes');
+    header('location: ' . ADMIN_ROOT . 'categories');
 }
 
 
 function createAction(\PDO $connexion, array $data)
 {
-    $types_of_dishes = CategoriesModel\insertOne($connexion, $data);
-    header('location: ' . ADMIN_ROOT . 'types_of_dishes');
+    $categorie = CategoriesModel\insertOne($connexion, $data);
+    header('location: ' . ADMIN_ROOT . 'categories');
 }

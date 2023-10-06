@@ -1,7 +1,7 @@
 <div class="page-header">
     <h1>AJOUT D'UNE CATÉGORIE</h1>
 </div>
-<form action="types_of_dishes/create" method="post">
+<form action="categories/create" method="post">
     <div>
         <label for="test">Name</label>
         <input type="text" id="name" name="name" placeholder="Name" />

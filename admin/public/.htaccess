@@ -14,36 +14,73 @@ RewriteRule ^users\/logout$ index.php?users=logout [L]
 # CATEGORIES.INDEX
 # PATTERN: /categories
 # TARGET: ?categories=index
-RewriteRule ^types_of_dishes$ index.php?types_of_dishes=index [L]
+RewriteRule ^categories$ index.php?categories=index [L]
 
 # 
 # CATEGORIES.ADD
 # PATTERN: /categories.add
 # TARGET: ?categories=add
-RewriteRule ^types_of_dishes\/add$ index.php?types_of_dishes=add [L]
+RewriteRule ^categories\/add$ index.php?categories=add [L]
 
 # 
 # CATEGORIES.CREATE
 # PATTERN: /categories/create
 # TARGET: ?categories=create
-RewriteRule ^types_of_dishes\/create$ index.php?types_of_dishes=create [L]
+RewriteRule ^categories\/create$ index.php?categories=create [L]
 
 
 # CATEGORIES.DELETE
 # PATTERN: /categories/delete/x
 # TARGET: ?categories=delete&id=x
-RewriteRule ^types_of_dishes\/delete\/([1-9][0-9]*)$ index.php?types_of_dishes=delete&id=$1 [L] 
+RewriteRule ^categories\/delete\/([1-9][0-9]*)$ index.php?categories=delete&id=$1 [L] 
 
 # CATEGORIES.EDIT
 # PATTERN: /categories/editForm/x
 # TARGET: ?categories=editForm&id=x
-RewriteRule ^types_of_dishes\/editForm\/([1-9][0-9]*)$ index.php?types_of_dishes=editForm&id=$1 [L]
+RewriteRule ^categories\/editForm\/([1-9][0-9]*)$ index.php?categories=editForm&id=$1 [L]
 
 
 # CATEGORIES.UPDATE
 # PATTERN: /categories/edit/x
 # TARGET: ?categories=edit&id=x
-RewriteRule ^types_of_dishes\/edit\/([1-9][0-9]*)$ index.php?types_of_dishes=edit&id=$1 [L]
+RewriteRule ^categories\/edit\/([1-9][0-9]*)$ index.php?categories=edit&id=$1 [L]
+
+
+
+# ROUTE DE USERS
+# USERS.INDEX
+# PATTERN: /users
+# TARGET: ?users=index
+RewriteRule ^users$ index.php?users=index [L]
+
+# 
+# USERS.ADD
+# PATTERN: /users.add
+# TARGET: ?users=add
+RewriteRule ^users\/add$ index.php?users=add [L]
+
+# 
+# USERS.CREATE
+# PATTERN: /users/create
+# TARGET: ?users=create
+RewriteRule ^users\/create$ index.php?users=create [L]
+
+
+# USERS.DELETE
+# PATTERN: /users/delete/x
+# TARGET: ?users=delete&id=x
+RewriteRule ^users\/delete\/([1-9][0-9]*)$ index.php?users=delete&id=$1 [L] 
+
+# USERS.EDIT
+# PATTERN: /users/editForm/x
+# TARGET: ?users=editForm&id=x
+RewriteRule ^users\/editForm\/([1-9][0-9]*)$ index.php?users=editForm&id=$1 [L]
+
+
+# USERS.UPDATE
+# PATTERN: /users/edit/x
+# TARGET: ?users=edit&id=x
+RewriteRule ^users\/edit\/([1-9][0-9]*)$ index.php?users=edit&id=$1 [L]
 
 
 
