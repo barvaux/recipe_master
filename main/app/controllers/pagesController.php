@@ -4,6 +4,11 @@ namespace App\Controllers\PagesController;
 
 function homeAction(\PDO $connexion)
 {
+
+    include_once '../app/models/categoriesModel.php';
+    $categories = \App\Models\CategoriesModel\findAllCategories($connexion);
+
+
     include_once '../app/models/dishesModel.php';
   
     $randomDish = \App\Models\dishesModel\findRandomDish($connexion);

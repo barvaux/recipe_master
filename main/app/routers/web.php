@@ -7,7 +7,15 @@
 if (isset($_GET['users'])) :
     include_once '../app/routers/users.php';
 
-// BOOKS: ROUTER DES DISHES
+// DETAIL DES CATEGORIE
+// PATTERN: ?categorieId=x
+// CTRL : categoriesController
+// ACTION SHOW
+elseif (isset($_GET['categorieId'])) :
+    include_once '../app/controllers/categoriesController.php';
+    \App\Controllers\CategoriesController\showAction($connexion, $_GET['categorieId']);
+
+// ROUTER DES DISHES
 // PATTERN: ?dishes=xxx
 elseif (isset($_GET['dishes'])) :
     include_once '../app/routers/dishes.php';

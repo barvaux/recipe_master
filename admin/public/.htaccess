@@ -46,6 +46,42 @@ RewriteRule ^categories\/editForm\/([1-9][0-9]*)$ index.php?categories=editForm&
 RewriteRule ^categories\/edit\/([1-9][0-9]*)$ index.php?categories=edit&id=$1 [L]
 
 
+# ROUTE DE RECIPES
+# RECIPES.INDEX
+# PATTERN: /recipes
+# TARGET: ?recipes=index
+RewriteRule ^recipes$ index.php?recipes=index [L]
+
+# 
+# RECIPES.ADD
+# PATTERN: /recipes.add
+# TARGET: ?recipes=add
+RewriteRule ^recipes\/add$ index.php?recipes=add [L]
+
+# 
+# RECIPES.CREATE
+# PATTERN: /recipes/create
+# TARGET: ?recipes=create
+RewriteRule ^recipes\/create$ index.php?recipes=create [L]
+
+
+# RECIPES.DELETE
+# PATTERN: /recipes/delete/x
+# TARGET: ?recipes=delete&id=x
+RewriteRule ^recipes\/delete\/([1-9][0-9]*)$ index.php?recipes=delete&id=$1 [L] 
+
+# RECIPES.EDIT
+# PATTERN: /recipes/editForm/x
+# TARGET: ?recipes=editForm&id=x
+RewriteRule ^recipes\/editForm\/([1-9][0-9]*)$ index.php?recipes=editForm&id=$1 [L]
+
+
+# RECIPES.UPDATE
+# PATTERN: /recipes/edit/x
+# TARGET: ?recipes=edit&id=x
+RewriteRule ^recipes\/edit\/([1-9][0-9]*)$ index.php?recipes=edit&id=$1 [L]
+
+
 
 # ROUTE DE USERS
 # USERS.INDEX

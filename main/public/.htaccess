@@ -6,12 +6,15 @@ RewriteEngine on
 # TARGET: ?users=loginForm
 RewriteRule ^users\/login\/form$ index.php?users=loginForm [L]
 
-# ROUTE DE CONNEXION
-# PATTERN: /users/login/submit
-# TARGET: ?users=login
-RewriteRule ^users\/login\/submit$ index.php?users=login [L]
+# DETAILS D UNE CATEGORIE
+# PATTERN: /categories/id/
+# TARGET: ?categorieId=x
+RewriteRule ^categories\/([1-9][0-9]*)$ index.php?categorieId=$1 [L]
 
-
+# ROUTE LISTE DES RECETTES
+# PATTERN: /recipes
+# TARGET: ?recipes=index
+RewriteRule ^recipes$ index.php?recipes=index [L]
 
 # ROUTE LISTE DES RECETTES
 # PATTERN: /recipes

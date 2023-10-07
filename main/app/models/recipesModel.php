@@ -1,6 +1,6 @@
 <?php
 namespace App\Models\recipesModel;
-// Menu Recette.
+
 function findLatestDishes(\PDO $connexion): ?array
 {
     $sql = "SELECT
@@ -25,6 +25,33 @@ function findLatestDishes(\PDO $connexion): ?array
     ORDER BY
         d.created_at DESC
     LIMIT 9";
+
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+
+function findAll(\PDO $connexion, array $categoryIds) {
+    // Utilisez la clause IN pour rechercher toutes les recettes appartenant aux catégories spécifiées
+    $categoryIdsString = implode(',', $categoryIds);
+    
+    $sql = "SELECT
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating,
+                t.name AS category_name
+            FROM
+                dishes d
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            INNER JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                t.id IN ({$categoryIdsString})  -- Utilisez la clause IN ici
+            GROUP BY
+                d.id, d.name, d.description, d.picture, t.name;";
 
     $rs = $connexion->query($sql);
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
