@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
     rel="stylesheet"/>
 <script src="//unpkg.com/alpinejs" defer></script>
+
 <style>
     body {
     font-family: "Poppins", sans-serif;

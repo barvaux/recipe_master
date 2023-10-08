@@ -2,75 +2,39 @@
 namespace App\Controllers\IngredientsController;
 use App\Models\IngredientsModel;
 
-function pouletAction(\PDO $connexion)
-{
-    
+function indexAction(\PDO $connexion) {
+    // Incluez le modèle et obtenez la liste de toutes les catégories
     include_once '../app/models/ingredientsModel.php';
+    $ingredients = IngredientsModel\findAllIngredients($connexion);
 
-    $poulet_recipes = \App\Models\IngredientsModel\getPoulet($connexion);
 
-    global $title, $content;
-    $title = "Recettes à base de poulet";
-    ob_start();
-    include '../app/views/ingredients/poulet.php';
-    $content = ob_get_clean();
+    // Utilisez ces données pour afficher la page correspondante
+    
+    $title = "Liste des ingrédients";
+    include '../app/views/ingredients/index.php'; // Créez une vue qui affiche la liste des catégories
+    
 }
 
-function boeufAction(\PDO $connexion)
-{
-    
+function showAction(\PDO $connexion, int $id) {
+    // Utilisez $id pour récupérer l'ingrédient correspondant depuis le modèle
     include_once '../app/models/ingredientsModel.php';
+    $ingredient = \App\Models\IngredientsModel\findOneById($connexion, $id);
 
-    $boeuf_recipes = \App\Models\IngredientsModel\getBoeuf($connexion);
+    if (!$ingredient) {
+        // Gérez le cas où l'ingrédient n'a pas été trouvé
+        // Vous pouvez rediriger l'utilisateur vers une page d'erreur ou effectuer une autre action appropriée.
+    } else {
+        // Définissez la variable $ingredientId pour l'utiliser plus tard
+        $ingredientId = $ingredient['id'];
 
-    global $title, $content;
-    $title = "Recettes à base de boeuf";
-    ob_start();
-    include '../app/views/ingredients/boeuf.php';
-    $content = ob_get_clean();
-}
+        // Utilisez $ingredientId pour récupérer les plats associés à l'ingrédient depuis le modèle des plats (recipesModel.php)
+        include_once '../app/models/recipesModel.php';
+        $recipes = \App\Models\RecipesModel\findAllByIngredients($connexion, [$ingredientId]); // Passer l'identifiant de l'ingrédient sous forme de tableau
 
-function poissonAction(\PDO $connexion)
-{
-    
-    include_once '../app/models/ingredientsModel.php';
-
-    $poisson_recipes = \App\Models\IngredientsModel\getPoisson($connexion);
-
-    
-    global $title, $content;
-    $title = "Recettes à base de poisson";
-    ob_start();
-    include '../app/views/ingredients/poisson.php';
-    $content = ob_get_clean();
-}
-
-function legumesAction(\PDO $connexion)
-{
-    
-    include_once '../app/models/ingredientsModel.php';
-
-    $legumes_recipes = \App\Models\IngredientsModel\getLegumes($connexion);
-
-    
-    global $title, $content;
-    $title = "Recettes à base de légume";
-    ob_start();
-    include '../app/views/ingredients/legumes.php';
-    $content = ob_get_clean();
-}
-
-function fromageAction(\PDO $connexion)
-{
-   
-    include_once '../app/models/ingredientsModel.php';
-
-    $fromage_recipes = \App\Models\IngredientsModel\getFromage($connexion);
-
-    
-    global $title, $content;
-    $title = "Recettes à base de fromage";
-    ob_start();
-    include '../app/views/ingredients/fromage.php';
-    $content = ob_get_clean();
+        // Reste du code pour afficher les plats associés à l'ingrédient
+        GLOBAL $content, $title;
+        ob_start();
+        include '../app/views/ingredients/show.php';
+        $content = ob_get_clean();
+    }
 }

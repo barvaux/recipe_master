@@ -1,7 +1,8 @@
 <section class="bg-gray-700 text-white rounded-lg shadow-2xl p-6 my-6">
     <div class="flex items-center mb-6">
         <!-- User Avatar -->
-        <img src="pictures/<?php echo $mostPopularUserPicture; ?>" alt="Nom de l'utilisateur" class="w-24 h-24 rounded-full border-4 border-yellow-500 mr-4">
+        <img src="public/pictures/<?php echo $mostPopularUserPicture; ?>" alt="Nom de l'utilisateur" class="w-24 h-24 rounded-full border-4 border-yellow-500 mr-4">
+
         <!-- User Details -->
         <div>
             <h3 class="text-2xl font-bold"><?php echo $userMostPopular['user_name']; ?></h3>

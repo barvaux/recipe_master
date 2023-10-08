@@ -13,12 +13,13 @@ function homeAction(\PDO $connexion)
   
     $randomDish = \App\Models\dishesModel\findRandomDish($connexion);
     $threePopularDishes = \App\Models\dishesModel\findThreePopularDishes($connexion);
+    $userMostPopularRecipes = \App\Models\dishesModel\findUserMostPopularRecipes($connexion);
     $userMostPopularRecipesRatings = \App\Models\dishesModel\findRatingsOfUserMostPopularRecipes($connexion);
     
 
     include_once '../app/models/usersModel.php';
     $userMostPopular = \App\Models\usersModel\findMostPopularUser($connexion);
-    $userMostPopularRecipes = \App\Models\dishesModel\findUserMostPopularRecipes($connexion);
+    
     $mostPopularUserPicture = \App\Models\usersModel\findMostPopularUserPicture($connexion);
     
 

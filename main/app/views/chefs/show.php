@@ -15,8 +15,11 @@
                     <p class="text-gray-700"><?php echo $user['user_biography']; ?></p>
                     
                     <div class="flex items-center mt-2">
-                        <span class="text-gray-700 mr-2">Membre depuis <?php echo $user['registration_date']; ?></span>
+                        <span class="text-gray-700 mr-2">Membre depuis : <?php echo $user['registration_date']; ?></span>
                     </div>
+                    <a href="#" class="inline-block mt-4 bg-blue-500 hover:bg-red-800 rounded-full px-4 py-2 text-white">
+                        Voir le profil
+                    </a>
                 </div>
             </div>
         <?php endforeach; ?>
