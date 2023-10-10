@@ -26,15 +26,15 @@
         </select>
     </div>
     <div>
-    <label for="user_id">Attribuer à l'utilisateur</label>
-        <select id="user_id" name="user_id">
-            <?php
-            // Bouclez sur les utilisateurs pour générer les options du champ de sélection
-            foreach ($users as $user) {
-                echo '<option value="' . $user['id'] . '">' . $user['name'] . '</option>';
-            }
-            ?>
-        </select>
+        <label for="user_id">Attribuer à l'utilisateur</label>
+            <select id="user_id" name="user_id">
+                <?php
+                // Bouclez sur les utilisateurs pour générer les options du champ de sélection
+                foreach ($users as $user) {
+                    echo '<option value="' . $user['id'] . '">' . $user['name'] . '</option>';
+                }
+                ?>
+            </select>
 
     </div>
     <div>

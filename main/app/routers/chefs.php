@@ -8,7 +8,7 @@ switch ($_GET['chefs']):
 
     default:
         include_once '../app/controllers/chefsController.php';
-        \App\Controllers\ChefsController\latestUsersAction($connexion);
+        \App\Controllers\ChefsController\indexAction($connexion);
         break;
 endswitch;  
 

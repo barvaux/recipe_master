@@ -54,6 +54,15 @@ function deleteAction(\PDO $connexion, int $id)
 function editFormAction(\PDO $connexion, int $id)
 { 
     $recipe = RecipesModel\findOneById($connexion, $id);
+    // Récupérez la liste des utilisateurs
+    include_once '../app/models/usersModel.php';
+    include_once '../app/models/categoriesModel.php'; 
+    include_once '../app/models/ingredientsModel.php'; 
+
+    $users = UsersModel\findAll($connexion);
+    $categories = CategoriesModel\findAll($connexion);
+    $ingredients = findAllIngredients($connexion);
+
 
     // Je charge la vue editForm dans $content
     global $title, $content;

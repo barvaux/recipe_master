@@ -4,12 +4,14 @@ namespace App\Models\RecipesModel;
 
 function findAll(\PDO $connexion): array
 {
-    $sql = "SELECT *
-            FROM dishes
-            ORDER BY name ASC;";
+    $sql = "SELECT d.id, d.name, d.created_at, t.name AS type_name
+            FROM dishes d
+            LEFT JOIN types_of_dishes t ON d.type_id = t.id
+            ORDER BY d.name ASC;";
     $rs = $connexion->query($sql);
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
 
 function insertOne(\PDO $connexion, array $data)
 {

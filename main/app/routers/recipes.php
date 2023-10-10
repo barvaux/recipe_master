@@ -8,6 +8,6 @@ switch ($_GET['recipes']):
 
     default:
         include_once '../app/controllers/recipesController.php';
-        \App\Controllers\RecipesController\latestRecipesAction($connexion);
+        \App\Controllers\RecipesController\indexAction($connexion);
         break;
 endswitch;

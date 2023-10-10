@@ -15,39 +15,57 @@ function findMostPopularUser(\PDO $connexion): ?array
     return $rs->fetch(\PDO::FETCH_ASSOC);
 }
 
-function findMostPopularUserPicture(\PDO $connexion): ?string
-{
-    $sql = "SELECT u.picture AS user_picture
-            FROM users u
-            WHERE u.id = (
-                SELECT u.id
-                FROM users u
-                LEFT JOIN dishes d ON u.id = d.user_id
-                LEFT JOIN ratings r ON d.id = r.dish_id
-                GROUP BY u.id
-                ORDER BY AVG(r.value) DESC
-                LIMIT 1
-            )";
-    $rs = $connexion->query($sql);
-    $row = $rs->fetch(\PDO::FETCH_ASSOC);
 
-    if ($row && isset($row['user_picture'])) {
-        return $row['user_picture']; 
-    } else {
-        return null;
-    }
+function findOneById(\PDO $connexion, int $id): ?array
+{
+    $sql = "SELECT
+                u.id AS user_id,
+                u.name AS user_name,
+                u.email AS user_email,
+                u.biography AS user_biography,
+                u.picture AS user_picture,
+                u.created_at AS user_creation_date,
+                d.id AS dish_id,
+                d.name AS dish_name,
+                d.description AS dish_description,
+                d.picture AS dish_picture,
+                ROUND(AVG(r.value), 1) AS average_rating,
+                t.description AS category_description
+            FROM
+                users u
+            LEFT JOIN
+                dishes d ON u.id = d.user_id
+            LEFT JOIN
+                ratings r ON d.id = r.dish_id
+            LEFT JOIN
+                types_of_dishes t ON d.type_id = t.id
+            WHERE
+                u.id = :id
+            GROUP BY
+                u.id, u.name, u.email, u.biography, u.picture, u.created_at, d.id, d.name, d.description, d.picture, t.description;";
+
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+    $rs->execute();
+    return $rs->fetch(\PDO::FETCH_ASSOC);
 }
 
 
-
-function findOneByName(\PDO $connexion, array $data)
+function findLatestUsers(\PDO $connexion): ?array
 {
-    $sql = "SELECT *
-            FROM users
-            WHERE name = :name;";
-    $rs = $connexion->prepare($sql);
-    $rs->bindValue(':name', $data['name'], \PDO::PARAM_STR);
-    $rs->execute();
+    $sql = "SELECT
+                id AS user_id,
+                name AS user_name,
+                email AS user_email,
+                biography AS user_biography,
+                picture AS user_picture,
+                created_at AS registration_date
+            FROM
+                users
+            ORDER BY
+                created_at DESC
+            LIMIT 9;";
 
-    return $rs->fetch(\PDO::FETCH_ASSOC);
+    $rs = $connexion->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }

@@ -9,21 +9,17 @@ function homeAction(\PDO $connexion)
     $categories = \App\Models\CategoriesModel\findAllCategories($connexion);
 
 
-    include_once '../app/models/dishesModel.php';
+    include_once '../app/models/recipesModel.php';
   
-    $randomDish = \App\Models\dishesModel\findRandomDish($connexion);
-    $threePopularDishes = \App\Models\dishesModel\findThreePopularDishes($connexion);
-    $userMostPopularRecipes = \App\Models\dishesModel\findUserMostPopularRecipes($connexion);
-    $userMostPopularRecipesRatings = \App\Models\dishesModel\findRatingsOfUserMostPopularRecipes($connexion);
+    $random = \App\Models\recipesModel\findRandomDish($connexion);
+    $threePopularDishes = \App\Models\recipesModel\findThreePopularDishes($connexion);
+    $UserMostPopularRecipes = \App\Models\recipesModel\findUserMostPopularRecipes($connexion);
     
 
     include_once '../app/models/usersModel.php';
     $userMostPopular = \App\Models\usersModel\findMostPopularUser($connexion);
     
-    $mostPopularUserPicture = \App\Models\usersModel\findMostPopularUserPicture($connexion);
-    
-
-
+   
     global $title, $content;
     $title = "Popular Dishes";
     ob_start();

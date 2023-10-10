@@ -29,14 +29,19 @@ RewriteRule ^ingredients\/([1-9][0-9]*)$ index.php?ingredientId=$1 [L]
 RewriteRule ^recipes$ index.php?recipes=index [L]
 
 # ROUTE DÉTAILS D'UNE RECETTE
-# PATTERN: /recipes/{id}/{slug}
+# PATTERN: /recipes/{id}
 # TARGET: ?recipes=show&id=x
-RewriteRule ^recipes\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)*[a-z0-9]$ index.php?recipes=show&id=$1 [L]
+RewriteRule ^recipes\/([1-9][0-9]*)$ index.php?recipes=show&id=$1 [L]
 
 # ROUTE LISTE DES CHEFS
 # PATTERN: /chefs
 # TARGET: ?chefs=index
 RewriteRule ^chefs$ index.php?chefs=index [L]
+
+# ROUTE DÉTAILS D'UN CHEF
+# PATTERN: /chefs/{id}
+# TARGET: ?chefs=show&id=x
+RewriteRule ^chefs\/([1-9][0-9]*)$ index.php?chefs=show&id=$1 [L]
 
 
 
